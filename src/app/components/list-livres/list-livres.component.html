@@ -1,0 +1,18 @@
+<h1>Liste Des livres</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col"> id</th>
+            <th scope="col">title</th>
+            <th scope="col">infos</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let l of livres">
+            <td>{{l.id}}</td>
+            <td>{{l.titre}} </td>
+            <td><button class="btn btn-dark"><a [routerLink]="['/livres', l.id]">Infos</a></button></td>
+        </tr>
+    </tbody>
+</table>

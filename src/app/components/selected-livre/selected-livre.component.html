@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="card text-center" *ngIf="livre">
+        <div class="card-header">
+            <strong> {{livre.titre }} </strong>
+        </div>
+        <div class="card-body">
+
+            <p>auteur : {{livre.auteur}}</p>
+            <p> catégorie : {{livre.categorie}}</p>
+            <p [ngClass]="{
+                badge : true , 'bg-primary': !livre.nouveau , 'bg-warning': livre.nouveau
+            }"> Prix :{{livre.prix | number : '0.3'}} DT</p>
+        </div>
+        <div class="card-footer text-muted">
+            <button (click)="onListedLivres()" class="btn btn-dark"> Retour</button>
+            <br>
+        </div>
+    </div>
+</div>
